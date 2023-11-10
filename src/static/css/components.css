@@ -1,0 +1,106 @@
+
+.active-dock-btn rect,
+.active-dock-btn path{
+    stroke: #00D1FF!important;
+}
+
+.blur-backdrop{
+    background: rgba(255, 255, 255, 0.32);
+    backdrop-filter: blur(8px);
+}
+
+.dock-images svg{
+    height: 30px;
+}
+
+.dock-images svg path,
+.dock-images svg rect,
+.dock-images svg mask{
+    pointer-events: none;
+}
+
+.greeting-text p{
+    margin-top: -.7rem;
+}
+
+.bot-greeting img{
+    height: 70px;
+}
+
+.not-connected p{
+    margin-top: -1rem;
+    font-size: .7rem!important;
+}
+
+.path-name img{
+    margin-right: .5rem;
+}
+
+.CircularProgressbar{
+    max-width: max-content;
+    height: 100px;
+}
+
+.blur-backdrop span{
+    font-size: .8rem!important;
+}
+.blur-backdrop img{
+    height: 40px!important;
+}
+
+.dock{
+    height: 3rem;
+    max-width: 380px!important;
+
+}
+
+.dock-images svg{
+    height: 20px;
+}
+
+.greeting-text h1{
+    font-size:1.2rem;
+    line-height: 1rem;
+    margin-top: 1rem;
+}
+
+.greeting-text h1 span{
+    font-size: .7rem!important;
+}
+
+.bot-greeting img{
+    height: 50px!important;
+}
+
+
+.not-connected div p{
+    font-size: 1.6rem!important;
+    line-height: 1rem;
+    margin-top: 1rem;
+}
+.not-connected div p span{
+    font-size: .7rem!important;
+}
+
+.not-connected div img{
+   height: 50px!important;
+   width: 50px!important;
+}
+
+.not-connected p:nth-child(2){
+    display: none!important;
+}
+
+.path-name{
+    font-size: .9rem;
+}
+
+.page-container{
+    max-height: max-content;
+    overflow-y: auto;
+}
+
+.CircularProgressbar{
+    padding: 10px 0;
+}
+
