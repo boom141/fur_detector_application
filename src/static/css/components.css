@@ -50,8 +50,6 @@
 
 .dock{
     height: 3rem;
-    max-width: 380px!important;
-
 }
 
 .dock-images svg{
@@ -102,5 +100,7 @@
 
 .CircularProgressbar{
     padding: 10px 0;
+
+    max-width: max-content;
 }
 

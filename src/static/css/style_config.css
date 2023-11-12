@@ -5,6 +5,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root{
+    --primary-color: #00D1FF 
+}
+
+.text-th1{
+    color: var(--primary-color)!important;
+}
+
 body{
     background: #2196f3;  /* fallback for old browsers */
     background: linear-gradient(#356CFA,#001E58); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -17,10 +25,10 @@ body{
     max-width: 500px!important;
 }
 
-.wrapper{
+
+.wrapper,.authentication-form{
     height: 100%;
 }
-
 
 .main-content{
     overflow: hidden;

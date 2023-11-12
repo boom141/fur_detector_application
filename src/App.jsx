@@ -12,7 +12,7 @@ import Notifications from './pages/Notifications';
 import Dashboard from './pages/Dashboard';
 import Control from './pages/Control';
 import Manual_Control from './components/ManualControl';
-
+import RegistrationForm from './components/registerAuth';
 
 const App = () => {
   const [image_src, set_img_src] = useState(null)
@@ -31,7 +31,10 @@ const App = () => {
   return (
     <div className="container main-container p-0">
       <div className="wrapper d-flex flex-column">
-          <Device/>
+          
+          <RegistrationForm/>
+
+          {/* <Device/>
           <div className='container mt-5 main-content d-flex flex-column flex-grow-1'>
               <Routes>
                   <Route path='/' element={<Control />} />
@@ -39,7 +42,7 @@ const App = () => {
                   <Route path='/notifications' element={<Notifications />} />
               </Routes>
           </div>
-          <Dock/>
+          <Dock/> */}
       </div>
     </div>
   )
