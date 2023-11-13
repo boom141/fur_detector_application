@@ -3,7 +3,7 @@ import {Component} from "react";
 import '../static/css/auth.css';
 
 
-class RegistrationForm extends Component{
+class LoginForm extends Component{
     constructor(){
         super();
     }
@@ -12,14 +12,14 @@ class RegistrationForm extends Component{
         return(
             <div className="authentication-form d-flex justify-content-center px-3">
                 <div className="d-flex flex-column w-100 mt-5">
-                    <span className="fw-medium">Create your account</span>
+                    <span className="fw-medium">Welcome Back!</span>
                     <input type="text" class="form-control mt-3 bg-cstm-4 text-cstm-5 border-none" placeholder="Enter Email"/>
                     <input type="password" class="form-control mt-3 bg-cstm-4 text-cstm-5 border-none" placeholder="Enter Password"/>
-                    <input type="password" class="form-control mt-3 bg-cstm-4 text-cstm-5 border-none" placeholder="Re-enter Password"/>
 
-                    <span className="text-center rounded-3 mt-5 py-2 bg-cstm-1 text-light">Sign up</span>
-                    <span className="register-suggestion text-center mt-4">Already have an account?
-                        <span role="button" className="text-cstm-2"> Sign in</span>
+                    <span role="button" className="forgot-password text-end mt-2 text-cstm-2">Forgot password ?</span>
+                    <span className="text-center rounded-3 mt-4 py-2 bg-cstm-1 text-light">Sign in</span>
+                    <span className="register-suggestion text-center mt-4">Don't have an account?
+                        <span role="button" className="text-cstm-2"> Sign up</span>
                     </span>
 
                     <div className="d-flex flex-column text-center text-light mt-3">
@@ -38,4 +38,4 @@ class RegistrationForm extends Component{
 
 }
 
-export default RegistrationForm
+export default LoginForm

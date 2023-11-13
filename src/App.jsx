@@ -1,17 +1,11 @@
 import {useEffect,useState} from 'react'
 import { Route, Routes } from 'react-router-dom';
-import { socket } from './components/Socket';
+import { socket } from './services/Socket';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './static/css/style_config.css';
-import './static/css/components.css';
 
-import Dock from './components/Dock';
-import Device from './components/Device';
-import Notifications from './pages/Notifications';
-import Dashboard from './pages/Dashboard';
-import Control from './pages/Control';
-import Manual_Control from './components/ManualControl';
+import LoginForm from './components/loginAuth';
 import RegistrationForm from './components/registerAuth';
 
 const App = () => {
@@ -29,20 +23,9 @@ const App = () => {
   },[])
 
   return (
-    <div className="container main-container p-0">
-      <div className="wrapper d-flex flex-column">
-          
-          <RegistrationForm/>
-
-          {/* <Device/>
-          <div className='container mt-5 main-content d-flex flex-column flex-grow-1'>
-              <Routes>
-                  <Route path='/' element={<Control />} />
-                  <Route path='/dashboard' element={<Dashboard />} />
-                  <Route path='/notifications' element={<Notifications />} />
-              </Routes>
-          </div>
-          <Dock/> */}
+    <div className="container main-wrapper p-0">
+      <div className="sub-wrapper d-flex flex-column">
+          <LoginForm/>
       </div>
     </div>
   )
