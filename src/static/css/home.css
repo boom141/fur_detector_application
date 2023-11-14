@@ -1,0 +1,15 @@
+.greetings{
+    background: var(--cstm-color-1); 
+    /* background: -webkit-linear-gradient(to right, #15253F, var(--cstm-color-1)); */
+    background-image: url('../assets/blobs.svg'), linear-gradient(to right, #15253F, var(--cstm-color-1)); 
+    background-size: cover;
+    background-position: center;
+}
+
+.greetings span:nth-child(2){
+    font-size: .8em;
+}
+
+.device-status div span{
+    font-size: .7em;
+}

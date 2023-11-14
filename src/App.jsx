@@ -7,6 +7,7 @@ import './static/css/style_config.css';
 
 import LoginForm from './components/loginAuth';
 import RegistrationForm from './components/registerAuth';
+import Home from './pages/home';
 
 const App = () => {
   const [image_src, set_img_src] = useState(null)
@@ -24,8 +25,8 @@ const App = () => {
 
   return (
     <div className="container main-wrapper p-0">
-      <div className="sub-wrapper d-flex flex-column">
-          <LoginForm/>
+      <div className="sub-wrapper">
+          <Home/>
       </div>
     </div>
   )
