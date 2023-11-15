@@ -1,4 +1,5 @@
 import {Component} from "react";
+import { CButton, CFormInput } from "@coreui/react";
 
 import '../static/css/auth.css';
 
@@ -13,11 +14,11 @@ class LoginForm extends Component{
             <div className="authentication-form d-flex justify-content-center px-3">
                 <div className="d-flex flex-column w-100 mt-5">
                     <span className="fw-medium">Welcome Back!</span>
-                    <input type="text" className="form-control mt-3 bg-cstm-4 text-cstm-5 border-none" placeholder="Enter Email"/>
-                    <input type="password" className="form-control mt-3 bg-cstm-4 text-cstm-5 border-none" placeholder="Enter Password"/>
+                    <CFormInput type="email" floatingClassName="mt-3  text-cstm-5" floatingLabel="Enter Email" placeholder="name@example.com"/>
+                    <CFormInput type="password" floatingClassName="mt-3  text-cstm-5" floatingLabel="Enter Password" placeholder="password"/>
 
                     <span role="button" className="forgot-password text-end mt-2 text-cstm-2">Forgot password ?</span>
-                    <span className="text-center rounded-3 mt-4 py-2 bg-cstm-1 text-light">Sign in</span>
+                    <CButton className="bg-cstm-1 mt-4 border border-none">Sign in</CButton>
                     <span className="register-suggestion text-center mt-4">Don't have an account?
                         <span role="button" className="text-cstm-2"> Sign up</span>
                     </span>

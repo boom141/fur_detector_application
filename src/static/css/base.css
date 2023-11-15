@@ -1,3 +1,25 @@
+hr{
+    opacity: 1;
+    background: white!important;
+}
+
+.offcanvas-btn,
+.offcanvas-btn img{
+    position: absolute;
+}
+
+.hamburger-close{
+    margin-left: 1rem!important;
+}
+
+.user-header div span{
+    font-size: 1em;
+}
+
+.user-header div span:nth-child(2){
+    font-size: .45em;
+}
+
 .greetings{
     background: var(--cstm-color-1); 
     /* background: -webkit-linear-gradient(to right, #15253F, var(--cstm-color-1)); */
@@ -10,6 +32,3 @@
     font-size: .8em;
 }
 
-.device-status div span{
-    font-size: .7em;
-}

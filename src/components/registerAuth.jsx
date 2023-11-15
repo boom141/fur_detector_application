@@ -1,4 +1,5 @@
 import {Component} from "react";
+import { CFormInput } from "@coreui/react";
 
 import '../static/css/auth.css';
 
@@ -13,11 +14,11 @@ class RegistrationForm extends Component{
             <div className="authentication-form d-flex justify-content-center px-3">
                 <div className="d-flex flex-column w-100 mt-5">
                     <span className="fw-medium">Create your account</span>
-                    <input type="text" class="form-control mt-3 bg-cstm-4 text-cstm-5 border-none" placeholder="Enter Email"/>
-                    <input type="password" class="form-control mt-3 bg-cstm-4 text-cstm-5 border-none" placeholder="Enter Password"/>
-                    <input type="password" class="form-control mt-3 bg-cstm-4 text-cstm-5 border-none" placeholder="Re-enter Password"/>
+                    <CFormInput type="email" floatingClassName="mt-3  text-cstm-5" floatingLabel="Enter Email" placeholder="name@example.com"/>
+                    <CFormInput type="password" floatingClassName="mt-3  text-cstm-5" floatingLabel="Enter Password" placeholder="password"/>
+                    <CFormInput type="password" floatingClassName="mt-3  text-cstm-5" floatingLabel="Re-enter Password" placeholder="password"/>
 
-                    <span className="text-center rounded-3 mt-5 py-2 bg-cstm-1 text-light">Sign up</span>
+                    <CButton className="bg-cstm-1 mt-4 border border-none">Sign up</CButton>
                     <span className="register-suggestion text-center mt-4">Already have an account?
                         <span role="button" className="text-cstm-2"> Sign in</span>
                     </span>
@@ -35,7 +36,6 @@ class RegistrationForm extends Component{
             </div>
         )
     }
-
 }
 
 export default RegistrationForm
