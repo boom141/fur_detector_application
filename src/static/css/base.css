@@ -32,3 +32,10 @@ hr{
     font-size: .8em;
 }
 
+.error-flag p span{
+    font-size: .7em!important;
+}
+
+.error-flag span{
+    font-size: .8em!important;
+}

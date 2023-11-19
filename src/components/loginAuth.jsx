@@ -1,8 +1,9 @@
 import {Component} from "react";
 import { CButton, CFormInput } from "@coreui/react";
+import { Link } from "react-router-dom";
+import { google_login } from "../services/firebase";
 
 import '../static/css/auth.css';
-
 
 class LoginForm extends Component{
     constructor(){
@@ -20,7 +21,7 @@ class LoginForm extends Component{
                     <span role="button" className="forgot-password text-end mt-2 text-cstm-2">Forgot password ?</span>
                     <CButton className="bg-cstm-1 mt-4 border border-none">Sign in</CButton>
                     <span className="register-suggestion text-center mt-4">Don't have an account?
-                        <span role="button" className="text-cstm-2"> Sign up</span>
+                        <Link to='/signup' className="text-cstm-2 text-decoration-none"> Sign up</Link>
                     </span>
 
                     <div className="d-flex flex-column text-center text-light mt-3">
@@ -28,7 +29,7 @@ class LoginForm extends Component{
                             <hr className="bg-cstm-5" />
                             <span className="position-absolute top-50 start-50 translate-middle bg-white px-3">Or</span>
                         </div>
-                        <span role="button" className="mt-3 border border-dark text-dark rounded-3 py-2 d-flex align-items-center justify-content-center">
+                        <span onClick={google_login} role="button" className="mt-3 border border-dark text-dark rounded-3 py-2 d-flex align-items-center justify-content-center">
                             <img height={30} src="https://img.icons8.com/fluency/96/google-logo.png" alt="google-logo"/> oogle
                         </span>
                     </div>
