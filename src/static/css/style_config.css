@@ -36,6 +36,9 @@
 .bg-cstm-5{
     background-color: var(--cstm-color-5)!important; background: var(--cstm-color-5)!important;}
 
+.image-orientation{
+    transform: rotate(45deg)!important;
+}
 
 
 body{
@@ -44,6 +47,7 @@ body{
 
 .main-wrapper{
     height: 100vh;
+    overflow-y: auto;
     max-width: 500px!important;
 }
 

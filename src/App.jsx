@@ -9,7 +9,7 @@ import './static/css/base.css';
 
 const App = () => {
   return (
-    <div className="container-sm main-wrapper p-0">
+    <div className="container-sm d-flex flex-column main-wrapper p-0">
         <Outlet/>
     </div>
   )

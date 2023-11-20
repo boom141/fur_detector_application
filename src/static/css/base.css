@@ -32,10 +32,16 @@ hr{
     font-size: .8em;
 }
 
-.error-flag p span{
+.error-flag p span,
+.verification-flag p span{
     font-size: .7em!important;
 }
 
-.error-flag span{
+.error-flag span,
+.verification-flag span{
     font-size: .8em!important;
+}
+
+.verification-flag p span span{
+    font-size: 1em!important;
 }

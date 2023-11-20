@@ -1,7 +1,7 @@
 import {Component} from "react";
 import { CButton, CFormInput } from "@coreui/react";
 import { Link } from "react-router-dom";
-import { google_login } from "../services/firebase";
+import { google_login_auth } from "../services/firebase";
 
 import '../static/css/auth.css';
 
@@ -29,7 +29,7 @@ class LoginForm extends Component{
                             <hr className="bg-cstm-5" />
                             <span className="position-absolute top-50 start-50 translate-middle bg-white px-3">Or</span>
                         </div>
-                        <span onClick={google_login} role="button" className="mt-3 border border-dark text-dark rounded-3 py-2 d-flex align-items-center justify-content-center">
+                        <span onClick={google_login_auth} role="button" className="mt-3 border border-dark text-dark rounded-3 py-2 d-flex align-items-center justify-content-center">
                             <img height={30} src="https://img.icons8.com/fluency/96/google-logo.png" alt="google-logo"/> oogle
                         </span>
                     </div>

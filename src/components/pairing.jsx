@@ -25,7 +25,7 @@ class Pairing extends Component {
                     this.state.loader ? <Loader/>
                     :
                         <>                    
-                            <img height={80} src={dc_icon}/>
+                            <img  height={80} src="https://img.icons8.com/pulsar-line/96/08182F/disconnected.png" className="image-orientation"/>
                             <p className="mt-3 fw-bold text-center ">
                                 Device Disconnected <br />
                                 <span className="fw-medium  ">“Click” the button below to 
