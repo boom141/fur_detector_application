@@ -3,8 +3,9 @@ import {Component} from "react";
 import '../static/css/loader.css';
 
 class Loader extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
+        this.label = props.label
     }
 
     render(){
@@ -23,7 +24,7 @@ class Loader extends Component{
                     <circle className="back" cx="17" cy="17" r="14"></circle>
                     <circle className="front" cx="17" cy="17" r="14"></circle>
                 </svg>
-                <div className="text" data-text="Searching"></div>
+                <div className="text" data-text={this.label}></div>
             </div>
         )
     }
