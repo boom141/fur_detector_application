@@ -1,7 +1,7 @@
-import {Component,createRef} from "react";
+import {Component,createRef,useEffect} from "react";
 import { Link } from "react-router-dom";
-import { google_login_auth } from "../services/firebase";
-import { check_fields, match_fields } from "../services/form_validation";
+import { google_login_auth, login_user_auth } from "../services/firebase";
+import { check_fields, mount_user, verify_email} from "../services/form_validation";
 
 
 
@@ -17,20 +17,30 @@ class LoginForm extends Component{
             alert_message:null,
             loader: false
         }
-        this.email = createRef(),
-        this.pass = createRef(),
-        this.error_message = null;
+        this.email = createRef()
+        this.pass = createRef()
+        this.count = 0
+        this.error_message = null
     }
 
+    show_form_error = (error_message) =>{
+        this.setState({loader:false, alert:true, alert_message: this.error_message})
+        this.error_message = error_message
+    }
 
     login_account = () =>{
         let email = this.email.current;
         let pass = this.pass.current;
         if(check_fields([email, pass])){
             this.setState({loader:true});
-        }else{
-            this.error_message = 'Fields must be provided';
-            this.setState({alert:true, alert_message: this.error_message});
+            login_user_auth(email.value, pass.value)
+            .then(user_credentials => verify_email(user_credentials.user))
+            .catch(err => this.show_form_error(err.code))
+            .then(user => mount_user(user))
+            .catch(err => this.show_form_error(err.code))
+        }
+        else{
+            this.show_form_error('Fields must be provided');
         }
     }
 

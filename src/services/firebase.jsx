@@ -1,6 +1,6 @@
 
 import { FirebaseError, initializeApp } from "firebase/app";
-import {getAuth, GoogleAuthProvider, sendEmailVerification, createUserWithEmailAndPassword, signInWithPopup} from "firebase/auth"
+import {getAuth, GoogleAuthProvider, sendEmailVerification, createUserWithEmailAndPassword, signInWithPopup, signInWithEmailAndPassword} from "firebase/auth"
 
 const firebaseConfig = {
     apiKey: "AIzaSyC_JkHGFnVcirM_efyn6o2erm1rXYkaCXM",
@@ -28,5 +28,9 @@ export const google_login_auth = () =>{
 
 export const register_user_auth = async (email,pass) =>{
     return await createUserWithEmailAndPassword(auth,email,pass)
+}
+
+export const login_user_auth = async (email,pass) =>{
+    return await signInWithEmailAndPassword(auth,email,pass)
 }
 

@@ -2,8 +2,7 @@ import {Component,createRef} from "react";
 
 import { Link } from "react-router-dom";
 import { google_login_auth, register_user_auth} from "../services/firebase";
-import { sendEmailVerification } from "firebase/auth";
-import { check_fields, match_fields } from "../services/form_validation";
+import { check_fields, match_fields, verify_email } from "../services/form_validation";
 
 import { CFormInput, CButton, CAlert} from "@coreui/react";
 import Loader from "./loader";
@@ -24,6 +23,11 @@ class RegistrationForm extends Component{
         this.error_message = null;
     }
 
+    show_form_error = (error_message) =>{
+        this.setState({loader:false, alert:true, alert_message: this.error_message})
+        this.error_message = error_message
+    }
+
     register_account = () =>{
         let email = this.email.current;
         let pass = this.pass.current;
@@ -32,27 +36,15 @@ class RegistrationForm extends Component{
             if(match_fields(pass.value,re_pass.value)){
                 this.setState({loader:true})
                 register_user_auth(email.value,pass.value)
-                .then(user_credentials => {
-                    sendEmailVerification(user_credentials.user)
-                    .then(() => {
-                        localStorage.setItem('access_token',user_credentials.user.email) 
-                        window.location.assign('/verification')
-                    })
-                    .catch(err => console.log(err))
-                
-                })
-                .catch(err => {
-                    this.error_message = err.code
-                    this.setState({alert:true, alert_message:this.error_message});
-                })
+                .then(user_credentials => verify_email(user_credentials.user))
+                .catch(err => this.show_form_error(err.code))
             }else{
-                this.error_message = 'Password does not match';
-                this.setState({alert:true, alert_message: this.error_message});
+                this.show_form_error('Password does not match');
             }
         }else{
-            this.error_message = 'Fields must be provided';
-            this.setState({alert:true, alert_message: this.error_message});
+            this.show_form_error('Fields must be provided');
         }
+
     }
 
     render(){
