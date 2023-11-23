@@ -1,6 +1,14 @@
 
 import { FirebaseError, initializeApp } from "firebase/app";
-import {getAuth, GoogleAuthProvider, sendEmailVerification, createUserWithEmailAndPassword, signInWithPopup, signInWithEmailAndPassword} from "firebase/auth"
+import {
+    getAuth, 
+    GoogleAuthProvider, 
+    createUserWithEmailAndPassword, 
+    signInWithPopup, 
+    signInWithEmailAndPassword,
+    sendEmailVerification,
+    sendPasswordResetEmail
+    } from "firebase/auth"
 
 const firebaseConfig = {
     apiKey: "AIzaSyC_JkHGFnVcirM_efyn6o2erm1rXYkaCXM",
@@ -20,6 +28,7 @@ const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider()
 export const auth = getAuth(app);
 
+
 export const google_login_auth = () =>{
     signInWithPopup(auth, provider)
     .then(result =>{console.log(result)})
@@ -34,3 +43,20 @@ export const login_user_auth = async (email,pass) =>{
     return await signInWithEmailAndPassword(auth,email,pass)
 }
 
+export const verify_email = async (user_credentials) =>{
+    try{
+        if(!user_credentials.emailVerified){
+            await sendEmailVerification(user_credentials)
+            localStorage.setItem('authorized',JSON.stringify({email:user_credentials.email}))     
+            return window.location.replace('/verification/account')
+        }else{
+            return user_credentials;
+        }
+    }catch(e){
+        return e
+    }
+};
+
+export const send_reset_pass = async(email) =>{
+    return await sendPasswordResetEmail(auth, email)
+}

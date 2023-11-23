@@ -1,8 +1,8 @@
 import {Component,createRef} from "react";
 
 import { Link } from "react-router-dom";
-import { google_login_auth, register_user_auth} from "../services/firebase";
-import { check_fields, match_fields, verify_email } from "../services/form_validation";
+import { google_login_auth, register_user_auth, verify_email} from "../services/firebase";
+import { check_fields, match_fields } from "../services/form_srvc";
 
 import { CFormInput, CButton, CAlert} from "@coreui/react";
 import Loader from "./loader";
@@ -19,13 +19,12 @@ class RegistrationForm extends Component{
         }
         this.email = createRef(),
         this.pass = createRef(),
-        this.re_pass = createRef(),
-        this.error_message = null;
+        this.re_pass = createRef()
     }
 
     show_form_error = (error_message) =>{
-        this.setState({loader:false, alert:true, alert_message: this.error_message})
-        this.error_message = error_message
+        this.setState({loader:false, alert:true});
+        this.setState({alert_message:error_message.split(':')[1]});
     }
 
     register_account = () =>{
@@ -37,12 +36,12 @@ class RegistrationForm extends Component{
                 this.setState({loader:true})
                 register_user_auth(email.value,pass.value)
                 .then(user_credentials => verify_email(user_credentials.user))
-                .catch(err => this.show_form_error(err.code))
+                .catch(err => this.show_form_error(err.message))
             }else{
-                this.show_form_error('Password does not match');
+                this.show_form_error(':Password does not match');
             }
         }else{
-            this.show_form_error('Fields must be provided');
+            this.show_form_error(':Fields must be provided');
         }
 
     }
@@ -60,7 +59,7 @@ class RegistrationForm extends Component{
                             <CFormInput ref={this.re_pass} type="password" floatingClassName="mt-3  text-cstm-5" floatingLabel="Re-enter Password" placeholder="password"/>
                             {
                                 this.state.alert ? 
-                                <CAlert color="danger" className="alert mt-3 p-3 d-flex align-items-cener" dismissible visible={this.state.alert} onClose={() => this.setState({alert:false})}>
+                                <CAlert color="danger" className="alert mt-3 p-3 d-flex align-items-cener" dismissible onClose={() => this.setState({alert:false})}>
                                     {this.state.alert_message}
                                 </CAlert>
                                 :

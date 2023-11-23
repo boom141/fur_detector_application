@@ -12,7 +12,8 @@ import LoginForm from './components/loginAuth';
 import RegistrationForm from './components/registerAuth';
 import Protected_page  from './pages/protected';
 import Device from './pages/device';
-import Verification from './components/EmailVerification';
+import Reset_pass from './pages/password_reset';
+import Email_verification from './pages/email_verification';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,8 +24,9 @@ const router = createBrowserRouter(
             <Route path='device' element={<Device/>}/>
         </Route>
         <Route path='/' element={<Protected_page />}>
-          <Route path='verification' element={<Verification/>}/>
+          <Route path='verification/:purpose' element={<Email_verification url='/verification/:purpose'/>}/>
         </Route>
+        <Route path='resetPassword' element={<Reset_pass/>}/>
     </Route>
   )
 )
