@@ -1,5 +1,5 @@
 
-import { FirebaseError, initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import {
     getAuth, 
     GoogleAuthProvider, 
@@ -9,6 +9,8 @@ import {
     sendEmailVerification,
     sendPasswordResetEmail
     } from "firebase/auth"
+    
+import { mount_user } from "./form_srvc";
 
 const firebaseConfig = {
     apiKey: "AIzaSyC_JkHGFnVcirM_efyn6o2erm1rXYkaCXM",
@@ -19,20 +21,19 @@ const firebaseConfig = {
     appId: "1:804574411965:web:af171d632ecfc65f3a0bd4"
 };
 
-export const actionCodeSettings = {
-    url: window.origin + '/signin',
-    handleCodeInApp: true
-};
 
 const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider()
 export const auth = getAuth(app);
 
 
-export const google_login_auth = () =>{
-    signInWithPopup(auth, provider)
-    .then(result =>{console.log(result)})
-    .catch(err =>{console.log(err)})
+export const google_login_auth = async () =>{
+    try{
+        let credentials = await signInWithPopup(auth, provider)
+        return mount_user(credentials.user)
+    }catch(e){
+        return e
+    }
 };
 
 export const register_user_auth = async (email,pass) =>{

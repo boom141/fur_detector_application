@@ -20,7 +20,7 @@ export const match_fields = (field_1,field_2) =>{
 
 
 export const mount_user = (user) =>{
-    localStorage.setItem('authorized',JSON.stringify({access_token:user.accessToken,email:user.email}))    
+    localStorage.setItem('authorized',JSON.stringify({access_token:user.accessToken}))    
     window.location.replace('/device')
 }
 
