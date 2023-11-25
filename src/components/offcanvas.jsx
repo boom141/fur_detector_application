@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import { auth } from '../services/firebase';
 import { Link } from 'react-router-dom';
 import { 
     COffcanvas, 
@@ -16,7 +17,7 @@ import device_icon from '../static/assets/device.svg';
 import remote_icon from '../static/assets/remote.svg';
 import notif_icon from '../static/assets/notif.svg';
 import logout_icon from '../static/assets/logout.svg';
-import { Value } from 'sass';
+
 
 
 
@@ -44,8 +45,7 @@ class Offcanvas extends Component{
                     <div className='user-header d-flex column-gap-4 justify-content-between align-items-center'>
                         <CAvatar className='avatar' src={sample_avatar}/>
                         <div className='d-flex flex-column'>
-                            <span className='text-white fw-bold'>Bingbong</span>
-                            <span className='text-cstm-2'>Bingbong@sampleEmail.com</span>
+                            <span className='text-white'>sampleEmail@email.com</span>
                         </div>
                     </div>
                     <img className='hamburger-close' src={hamburger_close} onClick={this.set_visibility}/>

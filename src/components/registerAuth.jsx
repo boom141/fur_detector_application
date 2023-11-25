@@ -71,7 +71,7 @@ class RegistrationForm extends Component{
                                 :
                                 false
                             }
-                            <CButton onClick={this.register_account} className="bg-cstm-1 mt-4 border border-none">Sign up</CButton>
+                            <CButton onClick={this.register_account} className="bg-cstm-1 mt-4 border border-none fw-medium">Sign up</CButton>
                             <span className="register-suggestion text-center mt-4">Already have an account?
                                 <Link to='/signin' className="text-cstm-2 text-decoration-none"> Sign in</Link>
                             </span>

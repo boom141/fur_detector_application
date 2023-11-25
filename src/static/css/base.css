@@ -13,11 +13,7 @@ hr{
 }
 
 .user-header div span{
-    font-size: 1em;
-}
-
-.user-header div span:nth-child(2){
-    font-size: .45em;
+    font-size: .5em;
 }
 
 .greetings{
@@ -32,16 +28,25 @@ hr{
     font-size: .8em;
 }
 
-.error-flag p span,
+.pairing-wrapper p span,
 .verification-flag p span{
     font-size: .6em!important;
 }
 
-.error-flag span,
+.pairing-wrapper span,
 .verification-flag span{
     font-size: .8em!important;
 }
 
 .verification-flag p span span{
     font-size: 1em!important;
+}
+
+.device-list-wrapper{
+    width: 15rem;
+}
+
+.list-wrapper{
+    overflow-y: auto;
+    max-height: 300px;
 }

@@ -45,6 +45,11 @@
     border-color: var(--cstm-color-6)!important;
 }
 
+.selected{
+    background-color: white!important;
+    color: black!important;
+}
+
 body{
     overflow: hidden;
 }
@@ -55,7 +60,7 @@ body{
     max-width: 500px!important;
 }
 
-.sub-wrapper{
+.device-wrapper{
     height: 100%;
 }
 

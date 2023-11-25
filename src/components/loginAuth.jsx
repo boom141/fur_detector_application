@@ -66,7 +66,7 @@ class LoginForm extends Component{
                                     :
                                     false
                             }
-                            <CButton onClick={this.login_account} className="bg-cstm-1 mt-4 border border-none">Sign in</CButton>
+                            <CButton onClick={this.login_account} className="bg-cstm-1 mt-4 border border-none fw-medium">Sign in</CButton>
                             <span className="register-suggestion text-center mt-4">Don't have an account?
                                 <Link to='/signup' className="text-cstm-2 text-decoration-none"> Sign up</Link>
                             </span>
