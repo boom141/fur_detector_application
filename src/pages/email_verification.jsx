@@ -15,8 +15,8 @@ const Email_verification = ({url}) => {
                 <>
                     <p className="mt-3 fw-bold text-center ">
                         Email sent! <br />
-                        <span className="fw-medium">A password reset link <br /> 
-                        was sent to this email <span className="fw-semibold"><u>{authorized.email}</u></span></span>
+                        <span className="fw-medium">A password reset link 
+                        was sent to this email <br /> <span className="fw-semibold"><u>{authorized.email}</u></span></span>
                     </p>
                     <div className='d-flex justify-content-between column-gap-3'>
                         <Link to='/resetPassword' className="bg-transparent mt-2 border border-dark text-decoration-none text-dark rounded-3 p-2">Try again</Link>

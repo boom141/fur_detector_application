@@ -1,6 +1,7 @@
 import {Component,createRef} from "react";
 import FadeIn from "react-fade-in/lib/FadeIn";
 import { CButton } from "@coreui/react";
+import { Navigate } from "react-router-dom";
 
 import search_icon from '../static/assets/search-logo.svg';
 import Loader from "./loader";
@@ -11,7 +12,7 @@ class Pairing extends Component {
         super();
         this.state = {
             loader: false,
-            devices: false
+            devices: true
         };
         this.loader_label = 'searching';
         this.selected_device = createRef([])
@@ -35,21 +36,29 @@ class Pairing extends Component {
 
     render(){
         return(
-            <FadeIn>
-                <div className="pairing-wrapper d-flex flex-column align-items-center">
+        
+                <div className="pairing-wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1 w-100 p-2">
                     {
                         this.state.loader ? <Loader label={this.state.devices ? 'connecting' : 'searching'}/>
                         :
                             this.state.devices ? 
                                 <>
-                                    <div className="device-list-wrapper p-3 d-flex flex-column justify-content-start align-items-start bg-cstm-1  p-2 rounded-3">
-                                        <h5 className="text-white fw-medium border-bottom w-100 py-2">Available device</h5>
-                                        <FadeIn className="my-3 d-flex flex-column row-gap-2 list-wrapper w-100 ">
-                                            <span onClick={this.select_device} className="d-flex text-white w-100 border p-1 px-3 rounded-1">device 1</span>
+                                    <div className="device-list-wrapper flex-grow-1 w-100 ">
+                                        <h5 className="text-dark fw-medium border-bottom border-dark w-100 py-2">Available device</h5>
+                                        <FadeIn className="list-wrapper my-3 d-flex flex-column row-gap-2  w-100 ">
+                                            <span onClick={this.select_device} className="d-flex justify-content-between align-items-center bg-cstm-1 text-white w-100 border p-3 rounded-3">
+                                                Bingbong cleaner
+                                                <img width="30" height="30" src="https://img.icons8.com/pastel-glyph/64/FFFFFF/vacuum-cleaner--v3.png" alt="vacuum-cleaner--v3"/>
+                                            </span>       
                                         </FadeIn>
-                                        <CButton onClick={this.connect_device} className="bg-white d-flex justify-content-center column-gap-3 align-items-center text-cstm-1 mt-2 border border-none w-100">
+                                    </div>
+                                    <div className="d-flex column-gap-3 w-100">
+                                        <CButton onClick={()=> this.setState({devices:false})} className="bg-transparent d-flex justify-content-center column-gap-3 align-items-center text-dark mt-2 border-dark  w-100">
+                                            <span className="fw-medium">Cancel</span>
+                                        </CButton>
+                                        <CButton onClick={this.connect_device} className="bg-cstm-1 d-flex justify-content-center column-gap-3 align-items-center text-white mt-2 border border-none w-100">
                                             <span className="fw-medium">Connect</span>
-                                            <img width="30" height="30" src="https://img.icons8.com/pulsar-line/48/000000/share-2.png"/>
+                                            <img width="30" height="30" src="https://img.icons8.com/pulsar-line/48/FFFFFF/network.png" alt="network"/>                    
                                         </CButton>
                                     </div>
                                 </>
@@ -68,7 +77,7 @@ class Pairing extends Component {
                                 </>
                     }
                 </div>
-            </FadeIn>
+        
         )
     }
 };
