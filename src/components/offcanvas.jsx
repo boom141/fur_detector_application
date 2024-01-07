@@ -55,12 +55,12 @@ class Offcanvas extends Component{
                         <Link className='text-decoration-none text-white fw-light d-flex column-gap-3'>
                         <img src={device_icon}/> Device
                         </Link>
-                        <Link className='text-decoration-none text-white fw-light d-flex column-gap-3'>
+                        {/* <Link className='text-decoration-none text-white fw-light d-flex column-gap-3'>
                         <img src={remote_icon}/> Remote Control
                         </Link>
                         <Link className='text-decoration-none text-white fw-light d-flex column-gap-3'>
                         <img src={notif_icon}/> Notification
-                        </Link>
+                        </Link> */}
                     </COffcanvasBody>
                         <hr/>
                         <Link className='p-3 text-decoration-none text-white fw-light d-flex column-gap-3'>
