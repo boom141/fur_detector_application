@@ -1,10 +1,11 @@
-import {useState} from 'react'
-
+import { useState } from 'react'
 import Offcanvas from '../components/offcanvas'
 import Pairing from '../components/pairing'
+import PairedDevice from './pairedDevice'
 
 const Device = () => {
-  
+  const pairedDevice = JSON.parse(localStorage.getItem('vaccumData'));
+
   return (
       <div className="device-wrapper d-flex flex-column">
           <div className="greetings position-relative overflow-hidden">
@@ -15,7 +16,13 @@ const Device = () => {
               </div>
           </div>
           <div className='content-wrapper d-flex flex-column justify-content-center align-items-center flex-grow-1'>
-              <Pairing/>
+              {
+                pairedDevice ? 
+                <PairedDevice/>
+                :
+                <Pairing/>
+              }
+              
           </div>
       </div>
   )

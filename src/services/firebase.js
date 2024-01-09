@@ -48,7 +48,7 @@ export const verify_email = async (user_credentials) =>{
         if(!user_credentials.emailVerified){
             await sendEmailVerification(user_credentials)
             localStorage.setItem('authorized',JSON.stringify({email:user_credentials.email}))     
-            return window.location.replace('/verification/account')
+            window.location.replace('/verification/account')
         }else{
             return user_credentials;
         }

@@ -14,6 +14,8 @@ import Protected_page  from './pages/protected';
 import Device from './pages/device';
 import Reset_pass from './pages/password_reset';
 import Email_verification from './pages/email_verification';
+import Controller from './pages/controller';
+import PairedDevice from './pages/pairedDevice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +29,8 @@ const router = createBrowserRouter(
           <Route path='verification/:purpose' element={<Email_verification url='/verification/:purpose'/>}/>
         </Route>
         <Route path='resetPassword' element={<Reset_pass/>}/>
+        <Route path='controller/:access_token' element={<Controller/>}/>
+        <Route path='homeDevice' element={<PairedDevice/>}/>
     </Route>
   )
 )

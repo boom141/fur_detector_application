@@ -76,7 +76,7 @@ class RegistrationForm extends Component{
                                 <Link to='/signin' className="text-cstm-2 text-decoration-none"> Sign in</Link>
                             </span>
 
-                            <div className="d-flex flex-column text-center text-light mt-3">
+                            {/* <div className="d-flex flex-column text-center text-light mt-3">
                                 <div className="mt-4 text-dark fw-medium position-relative">
                                     <hr className="bg-cstm-5" />
                                     <span className="position-absolute top-50 start-50 translate-middle bg-white px-3">Or</span>
@@ -84,7 +84,7 @@ class RegistrationForm extends Component{
                                 <span onClick={this.google_login} role="button" className="mt-3 border border-dark text-dark rounded-3 py-2 d-flex align-items-center justify-content-center">
                                     <img height={30} src="https://img.icons8.com/fluency/96/google-logo.png" alt="google-logo"/> oogle
                                 </span>
-                            </div>
+                            </div> */}
                         </div>
                 }
             </div>

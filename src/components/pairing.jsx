@@ -11,10 +11,10 @@ const Pairing = () =>{
     const [loader,setLoader] = useState(false);
     const [devices,setDevices] = useState(false);
     const [deviceList,setDeviceList]= useState([]);
-
+    
     useEffect(() =>{
         socket.connect()
-        socket.on('getConnectedVaccum', data =>{
+        socket.on('initVaccumList', data =>{
             setDeviceList([...data])
         })
     },[deviceList]);
@@ -44,7 +44,7 @@ const Pairing = () =>{
                                 <FadeIn className="list-wrapper my-3 d-flex flex-column row-gap-2  w-100 ">
                                     {
                                         deviceList.map((device,index) =>(
-                                            <Devices key={index} deviceName={device.name}/>      
+                                            <Devices key={index} vaccumData={device}/>      
                                         ))
                                     }
                                 </FadeIn>
