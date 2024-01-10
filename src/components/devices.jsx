@@ -9,7 +9,7 @@ const Devices = ({vaccumData}) => {
     localStorage.setItem('vaccumData', JSON.stringify(vaccumData));
     const authorized = JSON.parse(localStorage.getItem('authorized'));
     socket.connect()
-    socket.emit('vaccumUserAuth', {user:authorized.access_token, device:vaccumData});   
+    socket.emit('vaccumUserAuth', {user:authorized.email, device:vaccumData});   
     window.location.reload()
   }
 
