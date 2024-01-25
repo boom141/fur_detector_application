@@ -15,6 +15,7 @@ const Pairing = () =>{
     useEffect(() =>{
         socket.connect()
         socket.on('initVaccumList', data =>{
+            console.log(data)
             setDeviceList([...data])
         })
     },[deviceList]);

@@ -28,6 +28,8 @@ class Offcanvas extends Component{
             visible: false
         };
 
+        this.userData = JSON.parse(localStorage.getItem('authorized'));
+        this.userEmail = this.userData.email
     }
 
     set_visibility = () =>{
@@ -45,7 +47,7 @@ class Offcanvas extends Component{
                     <div className='user-header d-flex column-gap-4 justify-content-between align-items-center'>
                         <CAvatar className='avatar' src={sample_avatar}/>
                         <div className='d-flex flex-column'>
-                            <span className='text-white'>sampleEmail@email.com</span>
+                            <span className='text-white'>{this.userEmail}</span>
                         </div>
                     </div>
                     <img className='hamburger-close' src={hamburger_close} onClick={this.set_visibility}/>
